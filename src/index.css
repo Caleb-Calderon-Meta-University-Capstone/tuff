@@ -1,0 +1,188 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Pacifico&display=swap');
+
+@layer base {
+  :root {
+    --background: 320 30% 97%;
+    --foreground: 280 30% 15%;
+
+    --card: 320 40% 99%;
+    --card-foreground: 280 30% 15%;
+
+    --popover: 320 40% 99%;
+    --popover-foreground: 280 30% 15%;
+
+    --primary: 280 60% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 320 40% 92%;
+    --secondary-foreground: 280 30% 15%;
+
+    --muted: 320 25% 90%;
+    --muted-foreground: 280 20% 40%;
+
+    --accent: 340 75% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 300 25% 85%;
+    --input: 300 25% 85%;
+    --ring: 280 60% 50%;
+
+    --radius: 1rem;
+
+    /* Custom cute colors */
+    --purple: 280 60% 55%;
+    --purple-light: 280 50% 75%;
+    --pink: 330 70% 60%;
+    --pink-light: 330 80% 88%;
+    --red: 350 75% 55%;
+    --red-light: 350 70% 85%;
+    --magenta: 310 65% 55%;
+
+    /* Gradients */
+    --gradient-romantic: linear-gradient(135deg, hsl(280 60% 50%) 0%, hsl(330 70% 60%) 100%);
+    --gradient-soft: linear-gradient(180deg, hsl(320 30% 97%) 0%, hsl(330 50% 95%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(320 40% 99%) 0%, hsl(330 60% 97%) 100%);
+    --gradient-fire: linear-gradient(135deg, hsl(350 75% 55%) 0%, hsl(330 70% 60%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(280 60% 50% / 0.25);
+    --shadow-card: 0 8px 30px -8px hsl(300 40% 40% / 0.15);
+    --shadow-glow: 0 0 40px hsl(280 60% 50% / 0.3);
+  }
+
+  .dark {
+    --background: 280 30% 8%;
+    --foreground: 320 30% 95%;
+
+    --card: 340 25% 12%;
+    --card-foreground: 20 50% 95%;
+
+    --popover: 340 25% 12%;
+    --popover-foreground: 20 50% 95%;
+
+    --primary: 340 75% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 340 20% 18%;
+    --secondary-foreground: 20 50% 95%;
+
+    --muted: 340 20% 18%;
+    --muted-foreground: 340 20% 65%;
+
+    --accent: 15 70% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 340 20% 20%;
+    --input: 340 20% 20%;
+    --ring: 340 75% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-quicksand;
+    background: var(--gradient-soft);
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .font-romantic {
+    font-family: 'Pacifico', cursive;
+  }
+
+  .font-quicksand {
+    font-family: 'Quicksand', sans-serif;
+  }
+
+  .text-gradient {
+    background: var(--gradient-romantic);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-romantic {
+    background: var(--gradient-romantic);
+  }
+
+  .shadow-romantic {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-soft {
+    animation: pulse-soft 2s ease-in-out infinite;
+  }
+
+  .animate-bounce-soft {
+    animation: bounce-soft 1s ease-in-out infinite;
+  }
+
+  .animate-wiggle {
+    animation: wiggle 0.5s ease-in-out infinite;
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.4s ease-out forwards;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.9; }
+}
+
+@keyframes bounce-soft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
