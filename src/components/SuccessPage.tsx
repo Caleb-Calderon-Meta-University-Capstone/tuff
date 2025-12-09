@@ -87,6 +87,18 @@ const SuccessPage = ({ onBack }: SuccessPageProps) => {
 
 				{/* Main message */}
 				<h1 className="font-romantic text-4xl md:text-5xl lg:text-6xl text-gradient mb-6 leading-relaxed">hooray!</h1>
+				{/* Heart photo */}
+				<div className="flex justify-center mb-6">
+					<svg viewBox="0 0 100 90" className="w-40 h-40 md:w-48 md:h-48 drop-shadow-lg">
+						<defs>
+							<clipPath id="heart-clip">
+								<path d="M50 82 L10 40 A20 20 0 0 1 50 15 A20 20 0 0 1 90 40 Z" />
+							</clipPath>
+						</defs>
+
+						<image href="/Heartpic.JPG" x="0" y="0" width="100" height="90" preserveAspectRatio="xMidYMid slice" clipPath="url(#heart-clip)" />
+					</svg>
+				</div>
 
 				{/* Decorative hearts at bottom */}
 				<div className="flex justify-center gap-3">
